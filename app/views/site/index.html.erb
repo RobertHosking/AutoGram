@@ -1,113 +1,24 @@
 
 <div>
     
-    <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
     
+     <% @accounts.each do |account| %>
+ <a class="card-anchor" href="<%= account_path %>">
+    <div class="card card-hover col-sm-3">
+        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
+        <a href="http://instagram.com/<%= account.username%>"><h2>@<%= account.username %></h2><span><i class="fa fa-external-link"></i></span></a>
+        <div class='followers'>
+            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
+            <br>
+            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
+            <br>
+            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
+        </div>
+    </div>
+    </a>
+    <% end %>
+
     
-    
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
-        <a class="card-anchor" href="account.php">
-    <div class="card card-hover col-sm-3">
-        <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>
-        <a href="http://instagram.com"><h2>@puppygram</h2></a>
-        <div class='followers'>
-            <i class="fa fa-user-o fa-1x"></i><span>14,023</span>
-            <br>
-            <i class="fa fa-heart-o fa-1x"></i><span>427/day</span>
-            <br>
-            <i class="fa  fa-comment-o fa-1x"></i><span>33/day</span>
-        </div>
-    </div>
-    </a>
     
     
         

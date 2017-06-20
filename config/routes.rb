@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :accounts
   get '/dashboard', to: 'site#index'
 
-
+ 
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

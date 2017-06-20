@@ -5,6 +5,9 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
+    if @accounts.empty?
+      redirect_to new_account_path
+    end
   end
 
   # GET /accounts/1
