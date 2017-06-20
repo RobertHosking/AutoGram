@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @account.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @account.password %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @account.tags %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @account.comments %>
+</p>
+
+<p>
+  <strong>Comment percentage:</strong>
+  <%= @account.comment_percentage %>
+</p>
+
+<p>
+  <strong>Instagram token:</strong>
+  <%= @account.instagram_token %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @account.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
