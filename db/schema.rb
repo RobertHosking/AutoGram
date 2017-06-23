@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170620231909) do
     t.string   "password",           limit: 255
     t.text     "tags",               limit: 65535
     t.text     "comments",           limit: 65535
+    t.integer  "amount",             limit: 4
     t.integer  "comment_percentage", limit: 4
     t.string   "instagram_token",    limit: 255
     t.integer  "category_id",        limit: 4

@@ -5,6 +5,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :password
       t.text :tags
       t.text :comments
+      t.integer :amount
       t.integer :comment_percentage
       t.string :instagram_token
       t.integer :category_id

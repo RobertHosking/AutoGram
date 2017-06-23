@@ -3,26 +3,26 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
          
-            <li>
+            
+        <% if @categories %>
+           <li>
                 <a href="#">All</a>
             </li>
+         <% @categories.each do |category| %>
+                <li>
+                    <a href="#"><%= category.name %></a>
+                </li>
+            <% end %>
+        <% else %>
+           <li>
+            <p style="color:#fff;">No categories yet!</p>
+        </li>
+        <% end %>
+         
+
+          
             <li>
-                <a href="#">Dogs</a>
-            </li>
-            <li>
-                <a href="#">Cats</a>
-            </li>
-            <li>
-                <a href="#">Food</a>
-            </li>
-            <li>
-                <a href="#">Nature</a>
-            </li>
-            <li>
-                <a href="#">Photography</a>
-            </li>
-            <li>
-                <a style="" class="btn btn-primary" href="#">Add</a>
+                <a style="" class="btn btn-primary" href="<%= new_category_path %>">Add</a>
             </li>
         </ul>
     </div>

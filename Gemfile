@@ -30,7 +30,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 4.7.0'
 
-
+gem 'whenever', :require => false
+gem 'redis-rails'
+gem 'sidekiq'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

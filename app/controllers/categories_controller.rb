@@ -4,21 +4,28 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
+     @accounts = Account.all
     @categories = Category.all
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+     @accounts = Account.all
+    @categories = Category.all
   end
 
   # GET /categories/new
   def new
     @category = Category.new
+     @accounts = Account.all
+    @categories = Category.all
   end
 
   # GET /categories/1/edit
   def edit
+     @accounts = Account.all
+    @categories = Category.all
   end
 
   # POST /categories
@@ -28,7 +35,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to '/dashboard', notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }

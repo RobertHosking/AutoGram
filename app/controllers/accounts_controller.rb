@@ -4,7 +4,8 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+     @accounts = Account.all
+    @categories = Category.all
     if @accounts.empty?
       redirect_to new_account_path
     end
@@ -13,25 +14,31 @@ class AccountsController < ApplicationController
   # GET /accounts/1
   # GET /accounts/1.json
   def show
+     @accounts = Account.all
+    @categories = Category.all
   end
 
   # GET /accounts/new
   def new
     @account = Account.new
+     @accounts = Account.all
+    @categories = Category.all
   end
 
   # GET /accounts/1/edit
   def edit
+     @accounts = Account.all
+    @categories = Category.all
   end
 
   # POST /accounts
   # POST /accounts.json
   def create
     @account = Account.new(account_params)
-
+   
     respond_to do |format|
       if @account.save
-        format.html { redirect_to @account, notice: 'Account was successfully created.' }
+        format.html { redirect_to '/dashboard', notice: 'Account was successfully created.' }
         format.json { render :show, status: :created, location: @account }
       else
         format.html { render :new }
@@ -72,6 +79,6 @@ class AccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:username, :password, :tags, :comments, :comment_percentage, :instagram_token, :category_id)
+      params.require(:account).permit(:username, :password, :tags, :comments, :comment_percentage, :instagram_token, :category_id, :amount)
     end
 end
