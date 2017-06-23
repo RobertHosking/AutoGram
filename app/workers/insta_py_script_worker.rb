@@ -16,4 +16,12 @@ logger.info command
       command = `#{command}`
       p command
   end
+  
+  def self.queue_accounts
+    accounts = Account.all
+    accounts.each do |account|
+        InstaPyScriptWorker.perform_async(account.username, account.password, account.tags, account.comments, account.comment_percentage, account.amount)
+    end
+  end
+  
 end

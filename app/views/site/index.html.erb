@@ -3,9 +3,7 @@
     
     
      <% @accounts.each do |account| %>
-     <% InstaPyScriptWorker.perform_async(account.username, account.password, account.tags, account.comments, account.comment_percentage, account.amount) %>
 
-    <% # system("python public/InstaPy/single_serve.py #{account.username} #{account.password} #{account.tags} #{account.comments} #{account.comment_percentage} #{account.amount}")%>
  <a class="card-anchor" href="/accounts/<%= account.id %>/edit/">
     <div class="card card-hover col-sm-3">
         <img class="img-circle" src="https://sushituesday.club/AutoGram/img/puppy.jpg"></img>

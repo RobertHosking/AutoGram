@@ -41,7 +41,8 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.select :category_id, options_for_select([["none", "none"]]) + options_from_collection_for_select(@categories, "id", "name", []),{} %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
