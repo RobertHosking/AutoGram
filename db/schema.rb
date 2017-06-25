@@ -15,13 +15,14 @@ ActiveRecord::Schema.define(version: 20170620231909) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "username",           limit: 255
-    t.string   "password",           limit: 255
+    t.text     "password",           limit: 65535
     t.text     "tags",               limit: 65535
     t.text     "comments",           limit: 65535
     t.integer  "amount",             limit: 4
     t.integer  "comment_percentage", limit: 4
     t.string   "instagram_token",    limit: 255
     t.integer  "category_id",        limit: 4
+    t.boolean  "password_changed"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

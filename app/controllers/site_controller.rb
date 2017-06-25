@@ -1,6 +1,11 @@
 class SiteController < ApplicationController
   def index
-    @accounts = Account.all
+    if params['category']
+      @accounts = Account.where("category_id = ?", params['category'].to_i)
+    else
+      @accounts = Account.all
+    end
+    @categories = Category.all
     if @accounts.empty?
       redirect_to new_account_path
     end

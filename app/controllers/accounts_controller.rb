@@ -34,7 +34,10 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.json
   def create
-    @account = Account.new(account_params)
+    rsa = Cryptosystem::RSA.new
+    ap = account_params
+    ap[:password] = rsa.encrypt(ap[:password])
+    @account = Account.new(ap)
    
     respond_to do |format|
       if @account.save
@@ -51,7 +54,16 @@ class AccountsController < ApplicationController
   # PATCH/PUT /accounts/1.json
   def update
     respond_to do |format|
-      if @account.update(account_params)
+      if account_params[:password_changed]
+        rsa = Cryptosystem::RSA.new
+        ap = account_params
+        ap[:password] = rsa.encrypt(ap[:password])
+        
+      else
+        ap = account_params
+        ap[:password] = @account.password
+      end
+      if @account.update(ap)
         format.html { redirect_to @account, notice: 'Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @account }
       else
@@ -76,9 +88,11 @@ class AccountsController < ApplicationController
     def set_account
       @account = Account.find(params[:id])
     end
+    
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:username, :password, :tags, :comments, :comment_percentage, :instagram_token, :category_id, :amount)
+      params.require(:account).permit(:username, :password, :tags, :comments, :comment_percentage, :instagram_token, :category_id, :amount, :password_changed)
     end
 end

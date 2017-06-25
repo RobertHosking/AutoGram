@@ -12,7 +12,7 @@ class InstaPyScriptWorker
       path_to_script = "public/InstaPy/single_serve.py"
       command = "python #{path_to_script} #{username} #{Shellwords.escape(password)} '#{tags}' '#{comments}' #{comment_percentage} #{amount}"
           logger.debug "Here's some info: #{hash.inspect}"
-logger.info command
+      logger.info command
       command = `#{command}`
       p command
   end
@@ -20,7 +20,9 @@ logger.info command
   def self.queue_accounts
     accounts = Account.all
     accounts.each do |account|
-        InstaPyScriptWorker.perform_async(account.username, account.password, account.tags, account.comments, account.comment_percentage, account.amount)
+        rsa = Cryptosystem::RSA.new
+        password = rsa.decrypt(account.password) # => "secret"
+        InstaPyScriptWorker.perform_async(account.username, password, account.tags, account.comments, account.comment_percentage, account.amount)
     end
   end
   

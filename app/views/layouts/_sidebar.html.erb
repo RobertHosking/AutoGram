@@ -2,15 +2,14 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-         
-            
+         <% @categories = Category.all %>
         <% if @categories %>
            <li>
-                <a href="#">All</a>
+                <a href="/dashboard">All</a>
             </li>
          <% @categories.each do |category| %>
                 <li>
-                    <a href="#"><%= category.name %></a>
+                    <a href="/dashboard?category=<%= category.id %>"><%= category.name %></a>
                 </li>
             <% end %>
         <% else %>

@@ -19,6 +19,10 @@
     <%= f.label :password %><br>
     <%= f.text_field :password %>
   </div>
+   <div class="field">
+    <label for="password-changed">Change Password</label>
+    <input id="password-changed" name="account[password_changed]" type="checkbox" value="false" />  
+</div>
   <div class="field">
     <%= f.label :tags %><br>
     <%= f.text_area :tags %>

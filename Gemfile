@@ -33,6 +33,10 @@ gem 'font-awesome-sass', '~> 4.7.0'
 gem 'redis-rails'
 gem 'sidekiq'
 gem 'clockwork', '~> 2.0'
+
+gem 'cryptosystem'
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
