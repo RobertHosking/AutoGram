@@ -34,6 +34,7 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.json
   def create
+    require 'cryptosystem'
     rsa = Cryptosystem::RSA.new
     ap = account_params
     ap[:password] = rsa.encrypt(ap[:password])
@@ -53,6 +54,7 @@ class AccountsController < ApplicationController
   # PATCH/PUT /accounts/1
   # PATCH/PUT /accounts/1.json
   def update
+    require 'cryptosystem'
     respond_to do |format|
       if account_params[:password_changed]
         rsa = Cryptosystem::RSA.new

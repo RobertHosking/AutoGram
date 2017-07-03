@@ -9,6 +9,10 @@ class SiteController < ApplicationController
     if @accounts.empty?
       redirect_to new_account_path
     end
+    if params['run-script'] == "1"
+      require 'sidekiq'
+      InstaPyScriptWorker.queue_accounts
+    end
   end
 
   def show
